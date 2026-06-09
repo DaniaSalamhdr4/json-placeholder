@@ -1,0 +1,32 @@
+{
+  "name": "json-placeholder",
+  "version": "1.0.0",
+  "description": "Free fake and reliable API for testing and prototyping.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon C:\\Users\\PC 9.B4F-CO-16\\Desktop\\json-placeholder\\backend\\script.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev1": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniaSalamhdr4/json-placeholder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/DaniaSalamhdr4/json-placeholder/issues"
+  },
+  "homepage": "https://github.com/DaniaSalamhdr4/json-placeholder#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.3",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.96"
+  }
+}
