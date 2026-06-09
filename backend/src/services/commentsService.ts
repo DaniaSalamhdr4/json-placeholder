@@ -8,3 +8,9 @@ export const getAllComments = async () => {
     throw new Error("Error fetching comments: " + error);
   }
 };
+
+//get comment by id
+export const getCommentById = async (id: string) => {
+  return await Comments.findById(id);
+};
+

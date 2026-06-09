@@ -10,3 +10,8 @@ export const getAllTodos = async () => {
     throw error;
   }
 };
+
+//get todo by id
+export const getTodoById = async (id: string) => {
+  return await Todo.findById(id);
+};

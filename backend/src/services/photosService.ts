@@ -8,3 +8,9 @@ export const getAllPhotos = async () => {
     throw new Error("Error fetching photos: " + error);
   }
 };
+
+//get Photos by id
+export const getPhotoById = async (id: string) => {
+  return await Photos.findById(id);
+};
+
