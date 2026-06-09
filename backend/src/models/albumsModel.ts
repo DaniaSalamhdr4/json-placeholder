@@ -4,3 +4,5 @@ export const albumsSchema = new mongoose.Schema({
   id: { type: Number, required: true, unique: true },
   title: { type: String, required: true },
 });
+
+export const Albums = mongoose.model("Albums", albumsSchema);

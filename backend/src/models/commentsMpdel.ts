@@ -6,3 +6,5 @@ export const commentsSchema = new mongoose.Schema({
   email: { type: String, required: true },
   body: { type: String, required: true },
 });
+
+export const Comments = mongoose.model("Comments", commentsSchema);
