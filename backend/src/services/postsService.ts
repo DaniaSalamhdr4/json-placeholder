@@ -15,7 +15,15 @@ export const getPostById = async (id: string) => {
 };
 
 //POST posts
-
+export const postPosts = async (data: string) => {
+  try {
+    const newPost = new Posts(data);
+    const savedPost = await newPost.save();
+    return savedPost;
+  } catch (error) {
+    console.error("failed ceating post", error);
+  }
+};
 //PUT post by ID
 
 //PATCH posts by ID
