@@ -9,8 +9,6 @@ export const getAllComments = async () => {
   }
 };
 
-//get comment by id
-export const getCommentById = async (id: string) => {
-  return await Comments.findById(id);
-};
+// GET comments by posts id
 
+//GET comments BY Posts id "query"

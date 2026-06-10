@@ -13,3 +13,11 @@ export const getAllPosts = async () => {
 export const getPostById = async (id: string) => {
   return await Posts.findById(id);
 };
+
+//POST posts
+
+//PUT post by ID
+
+//PATCH posts by ID
+
+//DELETE Posts by ID
