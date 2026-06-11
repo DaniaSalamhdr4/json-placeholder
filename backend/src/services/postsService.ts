@@ -15,7 +15,7 @@ export const getPostById = async (id: string) => {
 };
 
 //POST posts
-export const postPosts = async (data: string) => {
+export const postPosts = async (data: any) => {
   try {
     const newPost = new Posts(data);
     const savedPost = await newPost.save();
@@ -25,7 +25,47 @@ export const postPosts = async (data: string) => {
   }
 };
 //PUT post by ID
+export const putPost = async (id: string, data: any) => {
+  try {
+    const exitPost = await Posts.findOne({ id: Number(id) });
+    if (!exitPost) {
+      return { success: false, error: "post not found" };
+    }
 
+    // apply updates to the found document and save
+    exitPost.set(data);
+    const updatingPost = await exitPost.save();
+    return { success: true, data: updatingPost };
+  } catch (error) {
+    console.error("failed updating post{PUT}", error);
+  }
+};
 //PATCH posts by ID
+export const patchPost = async (id: string, data: any) => {
+  try {
+    const updatedpost = await Posts.findOneAndUpdate({ id: Number(id) }, data, {
+      new: true,
+    });
+    if (!updatedpost) {
+      return { success: false, error: "post not found" };
+    }
 
+    return { success: true, data: updatedpost };
+  } catch (error) {
+    console.error("failed updating post{PATCH}", error);
+  }
+};
 //DELETE Posts by ID
+export const deletePost = async (id: string) => {
+  try {
+    const exitPost = await Posts.findOne({ id: Number(id) });
+    if (!exitPost) {
+      return { success: false, error: "post not found" };
+    }
+
+    await exitPost.deleteOne();
+    return { success: true, data: "post delete successfully" };
+  } catch (error) {
+    console.error("failed deleteing post{delete}", error);
+  }
+};

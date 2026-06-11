@@ -12,7 +12,7 @@ import connectDB from "./config/connectDB.js";
 const app = express();
 connectDB();
 const PORT = process.env.PORT || 3000;
-
+app.use(express.json());
 // users API
 app.use("/users", userRoutes);
 
@@ -26,7 +26,7 @@ app.use("/photos", photoRouter);
 app.use("/albums", albumRouter);
 
 // comments APIs
-app.use("/comment", commentRouter);
+app.use("/comments", commentRouter);
 
 // posts APIs
 app.use("/posts", postRouter);
