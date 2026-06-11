@@ -9,8 +9,4 @@ export const getAllPhotos = async () => {
   }
 };
 
-//get Photos by id
-export const getPhotoById = async (id: string) => {
-  return await Photos.findById(id);
-};
 
