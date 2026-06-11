@@ -31,8 +31,7 @@ export const putPost = async (id: string, data: any) => {
     if (!exitPost) {
       return { success: false, error: "post not found" };
     }
-
-    // apply updates to the found document and save
+    
     exitPost.set(data);
     const updatingPost = await exitPost.save();
     return { success: true, data: updatingPost };
