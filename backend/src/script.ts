@@ -3,6 +3,8 @@ import userRoutes from "./routes/userRoutes.js";
 import todoRoutes from "./routes/todosRoutes.js";
 import postRouter from "./routes/postsRoutes.js";
 import photoRouter from "./routes/photosRouters.js";
+import albumRouter from "./routes/albumsRouters.js";
+import commentRouter from "./routes/commentsRouter.js";
 import dotenv from "dotenv";
 dotenv.config();
 import connectDB from "./config/connectDB.js";
@@ -19,6 +21,12 @@ app.use("/todos", todoRoutes);
 
 // Photos APIs
 app.use("/photos", photoRouter);
+
+// Albums APIs
+app.use("/albums", albumRouter);
+
+// comments APIs
+app.use("/comment", commentRouter);
 
 // posts APIs
 app.use("/posts", postRouter);

@@ -10,8 +10,3 @@ export const getAlbums = async () => {
     throw error;
   }
 };
-
-//get Album by id
-export const getAlbumById = async (id: string) => {
-  return await Albums.findById(id);
-};
