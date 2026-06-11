@@ -1,4 +1,5 @@
 import { Comments } from "../models/commentsMpdel.js";
+import { getPostById } from "./postsService.js";
 
 export const getAllComments = async () => {
   try {
@@ -10,5 +11,7 @@ export const getAllComments = async () => {
 };
 
 // GET comments by posts id
-
-//GET comments BY Posts id "query"
+export const getCommentsByIdPost = async (id: string) => {
+  const comments = await Comments.find({ postId: Number(id) });
+  return comments;
+};
